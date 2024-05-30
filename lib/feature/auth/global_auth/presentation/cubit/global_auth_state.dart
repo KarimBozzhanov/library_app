@@ -1,13 +1,8 @@
 part of 'global_auth_cubit.dart';
 
-class GlobalAuthState extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
+class GlobalAuthInitialState extends CoreState {}
 
-class GlobalAuthInitial extends GlobalAuthState {}
-
-class GlobalAuthSuccessState extends GlobalAuthState {
+class GlobalAuthSuccessState extends CoreState {
   GlobalAuthSuccessState(this.user);
 
   final User? user;
@@ -16,4 +11,4 @@ class GlobalAuthSuccessState extends GlobalAuthState {
   List<Object?> get props => [user];
 }
 
-class GlobalLogOutState extends GlobalAuthState {}
+class GlobalLogOutState extends CoreState {}

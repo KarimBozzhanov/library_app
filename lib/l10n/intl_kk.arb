@@ -1,0 +1,11 @@
+{
+  "@@locale": "kk",
+  "welcome": "Қош келдіңіз",
+  "readWithoutLimits": "Шектеусіз оқыңыз",
+  "createAccount": "Аккаунты құру",
+  "logIn": "Кіру үшін",
+  "email": "Электрондық пошта",
+  "password": "Құпия сөз",
+  "doNotHaveAccount": "Әлі тіркелмеген?",
+  "signUpHere": "Тіркеу"
+}

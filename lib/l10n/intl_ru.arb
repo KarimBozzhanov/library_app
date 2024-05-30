@@ -1,0 +1,11 @@
+{
+  "@@locale": "ru",
+  "welcome": "Добро пожаловать",
+  "readWithoutLimits": "Читайте без ограничений",
+  "createAccount": "Создать аккаунт",
+  "logIn": "Войти",
+  "email": "Электронная почта",
+  "password": "Пароль",
+  "doNotHaveAccount": "Еще не зарегистрированы?",
+  "signUpHere": "Регистрация"
+}

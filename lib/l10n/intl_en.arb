@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "welcome": "Welcome",
+  "readWithoutLimits": "Read without limits",
+  "createAccount": "Create account",
+  "logIn": "Log in",
+  "email": "Email",
+  "password": "Password",
+  "doNotHaveAccount": "Don't have account?",
+  "signUpHere": "Sign up here"
+}
