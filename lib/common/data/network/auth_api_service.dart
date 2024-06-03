@@ -13,4 +13,9 @@ class AuthApiService {
     final credentials = await _auth.createUserWithEmailAndPassword(email: param.email, password: param.password);
     return credentials;
   }
+
+
+  Future<void> logOut() async {
+    await _auth.signOut();
+  }
 }

@@ -22,15 +22,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "doNotHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have account?"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
-        "logIn": MessageLookupByLibrary.simpleMessage("Log in"),
+        "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
+            "Please fill your details to login"),
+        "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(
+            "Please fill your details to sign up"),
+        "happyReading": MessageLookupByLibrary.simpleMessage("Happy Reading!"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "latestBooks": MessageLookupByLibrary.simpleMessage("Latest Books"),
+        "launchDescription": MessageLookupByLibrary.simpleMessage(
+            "Discover and relax with our online library app. Read from anywhere and find books you\'ll love. Happy reading!"),
+        "logIn": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "readWithoutLimits":
-            MessageLookupByLibrary.simpleMessage("Read without limits"),
-        "signUpHere": MessageLookupByLibrary.simpleMessage("Sign up here"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome")
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "repPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
+        "saved": MessageLookupByLibrary.simpleMessage("Saved"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("see more"),
+        "topBooks": MessageLookupByLibrary.simpleMessage("Top Books"),
+        "upcomingBooks": MessageLookupByLibrary.simpleMessage("Upcoming Books"),
+        "username": MessageLookupByLibrary.simpleMessage("Username")
       };
 }

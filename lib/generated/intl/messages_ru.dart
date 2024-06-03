@@ -22,16 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "createAccount":
-            MessageLookupByLibrary.simpleMessage("Создать аккаунт"),
+        "account": MessageLookupByLibrary.simpleMessage("Профиль"),
         "doNotHaveAccount":
             MessageLookupByLibrary.simpleMessage("Еще не зарегистрированы?"),
+        "edit": MessageLookupByLibrary.simpleMessage("Изменить"),
         "email": MessageLookupByLibrary.simpleMessage("Электронная почта"),
+        "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, заполните свои данные, чтобы войти"),
+        "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, заполните свои данные, чтобы зарегистрироваться"),
+        "happyReading":
+            MessageLookupByLibrary.simpleMessage("Приятного чтения!"),
+        "home": MessageLookupByLibrary.simpleMessage("Главная"),
+        "latestBooks": MessageLookupByLibrary.simpleMessage("Последние книги"),
+        "launchDescription": MessageLookupByLibrary.simpleMessage(
+            "Откройте и расслабьтесь с нашим приложением онлайн-библиотеки. Читайте откуда угодно и находите книги, которые вам нравятся. Приятного чтения!"),
         "logIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Выйти"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
-        "readWithoutLimits":
-            MessageLookupByLibrary.simpleMessage("Читайте без ограничений"),
-        "signUpHere": MessageLookupByLibrary.simpleMessage("Регистрация"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать")
+        "repPassword": MessageLookupByLibrary.simpleMessage("Повторите пароль"),
+        "saved": MessageLookupByLibrary.simpleMessage("Избранное"),
+        "search": MessageLookupByLibrary.simpleMessage("Поиск"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("узнать больше"),
+        "topBooks": MessageLookupByLibrary.simpleMessage("Лучшие книги"),
+        "upcomingBooks":
+            MessageLookupByLibrary.simpleMessage("Предстоящие книги"),
+        "username": MessageLookupByLibrary.simpleMessage("Имя пользователя")
       };
 }

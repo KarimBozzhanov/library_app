@@ -33,4 +33,10 @@ class GlobalPersonalDataSource {
       value: password,
     );
   }
+
+  void removeUserId() => _secureStorage.delete(key: GlobalPrefConstant.userId);
+
+  void removeLogin() => _secureStorage.delete(key: GlobalPrefConstant.login);
+
+  void removePassword() => _secureStorage.delete(key: GlobalPrefConstant.password);
 }

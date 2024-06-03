@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/common/presentation/app_rounded_container.dart';
+import 'package:library_app/common/presentation/h_box.dart';
 import 'package:library_app/config/theme.dart';
 import 'package:library_app/feature/auth/login/presentation/ui/login_screen.dart';
 import 'package:library_app/feature/auth/registration/presentation/ui/registration_screen.dart';
@@ -12,75 +14,76 @@ class LaunchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.mainBackground,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(70, 150, 70, 58),
-              child: Image.asset(
-                AppImages.logo,
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            Text(
-              S.current.welcome,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 42,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            Text(
-              S.current.readWithoutLimits,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w400,
-                fontSize: 20,
-              ),
-            ),
-            AppRoundedContainer(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const RegistrationBuilder(),
+      body: Stack(
+        children: [
+          Image.asset(
+            AppImages.icLaunchBackground,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Image.asset(
+                    AppImages.logo,
+                    width: 137,
+                    height: 137,
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 15),
-              margin: const EdgeInsets.fromLTRB(16, 54, 16, 20),
-              backgroundColor: Colors.white,
-              child: Text(
-                S.current.createAccount,
-                style: const TextStyle(
-                  color: AppColors.mainBackground,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
+                Text(
+                  S.current.launchDescription,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: AppColors.black,
+                  ),
                 ),
-              ),
+                AppRoundedContainer(
+                  onTap: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const LoginBuilder(),
+                    ),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  margin: const EdgeInsets.fromLTRB(16, 70, 16, 14),
+                  backgroundColor: AppColors.rdBlack,
+                  child: Text(
+                    S.current.logIn,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                AppRoundedContainer(
+                  onTap: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const RegistrationBuilder(),
+                    ),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  backgroundColor: Colors.transparent,
+                  child: Text(
+                    S.current.register,
+                    style: const TextStyle(
+                      color: AppColors.rdBlack,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                const HBox(40),
+              ],
             ),
-            AppRoundedContainer(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const LoginBuilder(),
-                ),
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 15),
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              backgroundColor: Colors.transparent,
-              borderColor: Colors.white,
-              child: Text(
-                S.current.logIn,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

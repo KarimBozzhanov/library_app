@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/di/di_locator.dart';
@@ -30,7 +31,7 @@ class LoginCubit extends Cubit<CoreState> {
     try {
       if (user != null) {
         emit(
-          LoginSuccessState(),
+          LoginSuccessState(user),
         );
       } else {
         emit(LoginFailureState());

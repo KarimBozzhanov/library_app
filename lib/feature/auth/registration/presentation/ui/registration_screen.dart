@@ -1,13 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:library_app/common/presentation/app_common_text_field.dart';
 import 'package:library_app/common/presentation/app_rounded_container.dart';
-import 'package:library_app/common/presentation/h_box.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/config/theme.dart';
+import 'package:library_app/feature/auth/global_auth/presentation/cubit/global_auth_cubit.dart';
 import 'package:library_app/feature/auth/login/presentation/ui/login_screen.dart';
 import 'package:library_app/feature/auth/registration/presentation/cubit/registration_cubit.dart';
-import 'package:library_app/feature/main_page/presentation/ui/main_page.dart';
+import 'package:library_app/generated/l10n.dart';
 
 class RegistrationBuilder extends StatelessWidget {
   const RegistrationBuilder({super.key});
@@ -52,99 +53,115 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return BlocConsumer<RegistrationCubit, CoreState>(
       listener: (context, state) {
         if (state is RegistrationSuccessState) {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const MainPage()),
-            ModalRoute.withName('/'),
-          );
+          Navigator.pop(context);
+          context.read<GlobalAuthCubit>().authSuccess(state.user);
         }
       },
       builder: (context, state) {
         if (state is RegistrationInitial) {
           return Scaffold(
-            body: Padding(
-              padding: const EdgeInsets.all(16),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const HBox(54),
-                    Image.asset(
-                      AppImages.icColouredLogo,
-                      width: 188,
-                      height: 174,
-                      fit: BoxFit.fitWidth,
-                    ),
-                    AppCommonTextField(
-                      textEditingController: _nameController,
-                      label: 'Full name',
-                      margin: const EdgeInsets.fromLTRB(30, 55, 30, 25),
-                    ),
-                    AppCommonTextField(
-                      textEditingController: _emailController,
-                      label: 'Email',
-                      margin: const EdgeInsets.fromLTRB(30, 0, 30, 25),
-                    ),
-                    AppCommonTextField(
-                      textEditingController: _passwordController,
-                      label: 'Password',
-                      margin: const EdgeInsets.fromLTRB(30, 0, 30, 25),
-                    ),
-                    AppCommonTextField(
-                      textEditingController: _repeatPassController,
-                      label: 'Repeat password',
-                      margin: const EdgeInsets.fromLTRB(30, 0, 30, 41),
-                    ),
-                    AppRoundedContainer(
-                      onTap: () => _cubit.registration(),
-                      backgroundColor: AppColors.mainBackground,
-                      child: const Text(
-                        'Create Account',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 18,
-                          color: Colors.white,
+            backgroundColor: AppColors.mainBackground,
+            appBar: AppBar(
+              forceMaterialTransparency: true,
+              centerTitle: true,
+              title: Text(
+                S.current.register,
+                style: const TextStyle(
+                  color: AppColors.rdBlack,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            body: SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 72, bottom: 32),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        S.current.fillYourDetailsToLogin,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: AppColors.black,
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 27),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Already have an account?",
+                  ),
+                  AppCommonTextField(
+                    textEditingController: _nameController,
+                    label: S.current.username,
+                    margin: const EdgeInsets.only(bottom: 24),
+                  ),
+                  AppCommonTextField(
+                    textEditingController: _emailController,
+                    label: S.current.email,
+                    margin: const EdgeInsets.only(bottom: 24),
+                  ),
+                  AppCommonTextField(
+                    textEditingController: _passwordController,
+                    label: S.current.password,
+                    isPassword: true,
+                    margin: const EdgeInsets.only(bottom: 24),
+                  ),
+                  AppCommonTextField(
+                    textEditingController: _repeatPassController,
+                    isPassword: true,
+                    label: S.current.repPassword,
+                    margin: const EdgeInsets.only(bottom: 32),
+                  ),
+                  AppRoundedContainer(
+                    onTap: () => _cubit.registration(),
+                    backgroundColor: AppColors.rdBlack,
+                    child: Text(
+                      S.current.register,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 27),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Already have an account?",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pushReplacement(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const LoginBuilder(),
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.only(
+                              left: 5,
+                            ),
+                          ),
+                          child: const Text(
+                            'Log in here',
                             style: TextStyle(
-                              color: AppColors.grey,
-                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
                               fontSize: 14,
                             ),
                           ),
-                          TextButton(
-                            onPressed: () => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LoginBuilder(),
-                              ),
-                            ),
-                            style: TextButton.styleFrom(
-                              padding: const EdgeInsets.only(
-                                left: 5,
-                              ),
-                            ),
-                            child: const Text(
-                              'Log in here',
-                              style: TextStyle(
-                                color: AppColors.grey,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
             ),
           );

@@ -50,41 +50,31 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Welcome`
-  String get welcome {
+  /// `Discover and relax with our online library app. Read from anywhere and find books you'll love. Happy reading!`
+  String get launchDescription {
     return Intl.message(
-      'Welcome',
-      name: 'welcome',
+      'Discover and relax with our online library app. Read from anywhere and find books you\'ll love. Happy reading!',
+      name: 'launchDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Read without limits`
-  String get readWithoutLimits {
-    return Intl.message(
-      'Read without limits',
-      name: 'readWithoutLimits',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Create account`
-  String get createAccount {
-    return Intl.message(
-      'Create account',
-      name: 'createAccount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Log in`
+  /// `Get Started`
   String get logIn {
     return Intl.message(
-      'Log in',
+      'Get Started',
       name: 'logIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
       desc: '',
       args: [],
     );
@@ -110,6 +100,16 @@ class S {
     );
   }
 
+  /// `Confirm password`
+  String get repPassword {
+    return Intl.message(
+      'Confirm password',
+      name: 'repPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Don't have account?`
   String get doNotHaveAccount {
     return Intl.message(
@@ -120,11 +120,141 @@ class S {
     );
   }
 
-  /// `Sign up here`
-  String get signUpHere {
+  /// `Register`
+  String get register {
     return Intl.message(
-      'Sign up here',
-      name: 'signUpHere',
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill your details to login`
+  String get fillYourDetailsToLogin {
+    return Intl.message(
+      'Please fill your details to login',
+      name: 'fillYourDetailsToLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill your details to sign up`
+  String get fillYourDetailsToSignUp {
+    return Intl.message(
+      'Please fill your details to sign up',
+      name: 'fillYourDetailsToSignUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved`
+  String get saved {
+    return Intl.message(
+      'Saved',
+      name: 'saved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Happy Reading!`
+  String get happyReading {
+    return Intl.message(
+      'Happy Reading!',
+      name: 'happyReading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logOut {
+    return Intl.message(
+      'Log out',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Books`
+  String get topBooks {
+    return Intl.message(
+      'Top Books',
+      name: 'topBooks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest Books`
+  String get latestBooks {
+    return Intl.message(
+      'Latest Books',
+      name: 'latestBooks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming Books`
+  String get upcomingBooks {
+    return Intl.message(
+      'Upcoming Books',
+      name: 'upcomingBooks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `see more`
+  String get seeMore {
+    return Intl.message(
+      'see more',
+      name: 'seeMore',
       desc: '',
       args: [],
     );

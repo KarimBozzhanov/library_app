@@ -10,6 +10,7 @@ class AppCommonTextField extends StatelessWidget {
     this.margin,
     this.label,
     this.keyboardType,
+    this.isPassword = false,
   });
 
   final TextEditingController textEditingController;
@@ -18,6 +19,7 @@ class AppCommonTextField extends StatelessWidget {
   final EdgeInsets? margin;
   final String? label;
   final TextInputType? keyboardType;
+  final bool isPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +28,25 @@ class AppCommonTextField extends StatelessWidget {
       child: TextField(
         controller: textEditingController,
         keyboardType: keyboardType,
+        obscureText: isPassword,
         decoration: InputDecoration(
           hintText: label,
-          contentPadding: const EdgeInsets.fromLTRB(29, 18, 10, 18),
-          border: OutlineInputBorder(
+          filled: true,
+          focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(
-              color: AppColors.grey,
-              width: 0.5,
-              strokeAlign: BorderSide.strokeAlignOutside,
+              color: AppColors.rdBlack,
+              width: 2,
             ),
           ),
-          hintStyle: TextStyle(
-            color: AppColors.brightGrey,
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none
+          ),
+          fillColor: AppColors.lightGrey,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          hintStyle: const TextStyle(
+            color: AppColors.black,
+            fontSize: 14,
           ),
         ),
       ),

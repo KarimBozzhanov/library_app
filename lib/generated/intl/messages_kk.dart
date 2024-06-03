@@ -22,15 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "createAccount": MessageLookupByLibrary.simpleMessage("Аккаунты құру"),
+        "account": MessageLookupByLibrary.simpleMessage("Профиль"),
         "doNotHaveAccount":
             MessageLookupByLibrary.simpleMessage("Әлі тіркелмеген?"),
+        "edit": MessageLookupByLibrary.simpleMessage("Өзгерту"),
         "email": MessageLookupByLibrary.simpleMessage("Электрондық пошта"),
+        "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
+            "Жүйеге кіру үшін мәліметтеріңізді толтырыңыз"),
+        "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(
+            "Тіркелу үшін мәліметтеріңізді толтырыңыз"),
+        "happyReading": MessageLookupByLibrary.simpleMessage("Жақсы оқу!"),
+        "home": MessageLookupByLibrary.simpleMessage("Негізгі"),
+        "latestBooks": MessageLookupByLibrary.simpleMessage("Соңғы кітаптар"),
+        "launchDescription": MessageLookupByLibrary.simpleMessage(
+            "Біздің онлайн кітапхана қолданбасымен ашып, демалыңыз. Қай жерде болсаңыз да оқып, ұнайтын кітаптарды табыңыз. Қызықты оқулар!"),
         "logIn": MessageLookupByLibrary.simpleMessage("Кіру үшін"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Шығу"),
         "password": MessageLookupByLibrary.simpleMessage("Құпия сөз"),
-        "readWithoutLimits":
-            MessageLookupByLibrary.simpleMessage("Шектеусіз оқыңыз"),
-        "signUpHere": MessageLookupByLibrary.simpleMessage("Тіркеу"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Қош келдіңіз")
+        "repPassword":
+            MessageLookupByLibrary.simpleMessage("Құпия сөзді қайталаңыз"),
+        "saved": MessageLookupByLibrary.simpleMessage("Таңдаулылар"),
+        "search": MessageLookupByLibrary.simpleMessage("Іздеу"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("көбірек біліңіз"),
+        "topBooks": MessageLookupByLibrary.simpleMessage("Үздік кітаптар"),
+        "upcomingBooks":
+            MessageLookupByLibrary.simpleMessage("Алдағы кітаптар"),
+        "username": MessageLookupByLibrary.simpleMessage("Қолданушының аты")
       };
 }

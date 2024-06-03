@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:library_app/common/constant/core_constant.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/di/di_locator.dart';
+import 'package:library_app/feature/auth/global_auth/domain/use_case/global_log_out_use_case.dart';
 import 'package:library_app/feature/auth/global_auth/domain/use_case/global_sign_in_use_case.dart';
 import 'package:library_app/feature/auth/login/domain/use_case/login_use_case.dart';
 
@@ -12,9 +13,11 @@ class GlobalAuthCubit extends Cubit<CoreState> {
   GlobalAuthCubit()
       : _globalSignIn = sl(),
         _auth = sl(),
+        _logOutUseCase = sl(),
         super(GlobalAuthInitialState());
 
   final GlobalSignInUseCase _globalSignIn;
+  final GlobalLogOutUseCase _logOutUseCase;
   final LoginUseCase _auth;
 
   Future<void> checkData() async {
@@ -35,5 +38,14 @@ class GlobalAuthCubit extends Cubit<CoreState> {
     } else {
       emit(GlobalLogOutState());
     }
+  }
+
+  void authSuccess(User? user) {
+    emit(GlobalAuthSuccessState(user));
+  }
+
+  Future<void> logOut() async {
+    await _logOutUseCase.execute();
+    emit(GlobalLogOutState());
   }
 }

@@ -5,7 +5,9 @@ import 'package:library_app/common/presentation/localization/data/prefs/global_l
 import 'package:library_app/common/presentation/localization/data/repository/global_localization_repository.dart';
 import 'package:library_app/common/presentation/localization/domain/use_case/global_localization_use_case.dart';
 import 'package:library_app/feature/auth/global_auth/data/prefs/global_personal_data_source.dart';
+import 'package:library_app/feature/auth/global_auth/data/repository/global_auth_repository.dart';
 import 'package:library_app/feature/auth/global_auth/data/repository/global_personal_data_repository.dart';
+import 'package:library_app/feature/auth/global_auth/domain/use_case/global_log_out_use_case.dart';
 import 'package:library_app/feature/auth/global_auth/domain/use_case/global_sign_in_use_case.dart';
 import 'package:library_app/feature/auth/login/data/repository/login_repository.dart';
 import 'package:library_app/feature/auth/login/domain/use_case/login_use_case.dart';
@@ -45,7 +47,8 @@ void _repositoryModule() {
     ..registerFactory(GlobalPersonalDataRepository.new)
     ..registerFactory(LoginRepository.new)
     ..registerFactory(RegistrationRepository.new)
-    ..registerFactory(GlobalLocalizationRepository.new);
+    ..registerFactory(GlobalLocalizationRepository.new)
+    ..registerFactory(GlobalAuthRepository.new);
 }
 
 void _useCaseModule() {
@@ -55,5 +58,6 @@ void _useCaseModule() {
     ..registerFactory(RegistrationUseCase.new)
     ..registerFactory(GlobalGetLocalizationUseCase.new)
     ..registerFactory(GlobalSetLocalizationUseCase.new)
-    ..registerFactory(GlobalRemoveLocalizationUseCase.new);
+    ..registerFactory(GlobalRemoveLocalizationUseCase.new)
+    ..registerFactory(GlobalLogOutUseCase.new);
 }

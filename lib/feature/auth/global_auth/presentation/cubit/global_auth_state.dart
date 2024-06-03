@@ -11,4 +11,6 @@ class GlobalAuthSuccessState extends CoreState {
   List<Object?> get props => [user];
 }
 
+class GlobalAuthFailureState extends CoreState {}
+
 class GlobalLogOutState extends CoreState {}

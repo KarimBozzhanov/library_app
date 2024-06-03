@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/di/di_locator.dart';
@@ -35,7 +36,7 @@ class RegistrationCubit extends Cubit<CoreState> {
     try {
       final user = await _registrationUseCase.registration(_emailController.text, _passwordController.text);
       if(user != null) {
-        emit(RegistrationSuccessState());
+        emit(RegistrationSuccessState(user));
       } else {
         emit(RegistrationFailureState());
       }

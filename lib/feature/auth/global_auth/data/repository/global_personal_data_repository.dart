@@ -17,4 +17,10 @@ class GlobalPersonalDataRepository {
   void setLogin(String login) => _dataSource.setLogin(login);
 
   void setPassword(String password) => _dataSource.setPassword(password);
+
+  void removeUserId() => _dataSource.removeUserId();
+
+  void removeLogin() => _dataSource.removeLogin();
+
+  void removePassword() => _dataSource.removePassword();
 }

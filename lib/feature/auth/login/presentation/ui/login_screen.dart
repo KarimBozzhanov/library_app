@@ -1,13 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:library_app/common/presentation/app_common_text_field.dart';
 import 'package:library_app/common/presentation/app_rounded_container.dart';
-import 'package:library_app/common/presentation/h_box.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/config/theme.dart';
+import 'package:library_app/feature/auth/global_auth/presentation/cubit/global_auth_cubit.dart';
 import 'package:library_app/feature/auth/login/presentation/cubit/login_cubit.dart';
 import 'package:library_app/feature/auth/registration/presentation/ui/registration_screen.dart';
-import 'package:library_app/feature/main_page/presentation/ui/main_page.dart';
 import 'package:library_app/generated/l10n.dart';
 
 class LoginBuilder extends StatelessWidget {
@@ -48,59 +48,76 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocConsumer<LoginCubit, CoreState>(
       listener: (context, state) {
         if (state is LoginSuccessState) {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const MainPage()),
-            ModalRoute.withName('/'),
-          );
+          Navigator.pop(context);
+          context.read<GlobalAuthCubit>().authSuccess(state.user);
         }
       },
       builder: (context, state) {
         if (state is LoginInitialState) {
           return Scaffold(
-            body: Padding(
+            backgroundColor: AppColors.mainBackground,
+            appBar: AppBar(
+              centerTitle: true,
+              forceMaterialTransparency: true,
+              title: Text(
+                S.current.logIn,
+                style: const TextStyle(
+                  color: AppColors.rdBlack,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            body: SingleChildScrollView(
               padding: const EdgeInsets.all(16),
-              child: SingleChildScrollView(
+              child: AutofillGroup(
                 child: Column(
                   children: [
-                    const HBox(100),
-                    Image.asset(
-                      AppImages.icColouredLogo,
-                      width: 188,
-                      height: 174,
-                      fit: BoxFit.fitWidth,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 100, bottom: 32),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          S.current.fillYourDetailsToLogin,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: AppColors.black,
+                          ),
+                        ),
+                      ),
                     ),
                     AppCommonTextField(
                       textEditingController: _emailController,
                       label: S.current.email,
-                      margin: const EdgeInsets.fromLTRB(30, 55, 30, 24),
+                      margin: const EdgeInsets.only(bottom: 24),
                     ),
                     AppCommonTextField(
                       textEditingController: _passwordController,
                       label: S.current.password,
-                      margin: const EdgeInsets.fromLTRB(30, 0, 30, 55),
+                      isPassword: true,
+                      margin: const EdgeInsets.only(bottom: 32),
                     ),
                     AppRoundedContainer(
                       onTap: () => _cubit.login(),
-                      backgroundColor: AppColors.mainBackground,
+                      backgroundColor: AppColors.rdBlack,
                       child: Text(
                         S.current.logIn,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 14,
                           color: Colors.white,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 27),
+                      padding: const EdgeInsets.only(top: 24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             S.current.doNotHaveAccount,
                             style: const TextStyle(
-                              color: AppColors.grey,
+                              color: Colors.black,
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
                             ),
@@ -108,18 +125,18 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextButton(
                             onPressed: () => Navigator.pushReplacement(
                                 context,
-                                MaterialPageRoute(
+                                CupertinoPageRoute(
                                     builder: (context) =>
-                                    const RegistrationBuilder())),
+                                        const RegistrationBuilder())),
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.only(
                                 left: 5,
                               ),
                             ),
                             child: Text(
-                              S.current.signUpHere,
+                              S.current.register,
                               style: const TextStyle(
-                                color: AppColors.grey,
+                                color: AppColors.black,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                               ),

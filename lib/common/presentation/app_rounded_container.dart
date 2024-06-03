@@ -36,10 +36,10 @@ class AppRoundedContainer extends StatelessWidget {
   Widget _getContainer() {
     return Container(
       alignment: alignment ?? Alignment.center,
-      margin: margin ?? const EdgeInsets.symmetric(horizontal: 33),
-      padding: padding ?? const EdgeInsets.symmetric(vertical: 15),
+      margin: margin,
+      padding: padding ?? const EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius ?? 10),
+        borderRadius: BorderRadius.circular(borderRadius ?? 8),
         border: borderColor != null ? Border.all(color: borderColor ?? Colors.white): null,
         color: backgroundColor ?? Colors.white,
       ),
