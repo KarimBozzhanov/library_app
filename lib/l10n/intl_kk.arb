@@ -22,5 +22,13 @@
   "upcomingBooks": "Алдағы кітаптар",
   "seeMore": "көбірек біліңіз",
   "emptyList": "Тізім бос",
-  "failedToRetrieveData": "Деректерді алу мүмкін болмады"
+  "failedToRetrieveData": "Деректерді алу мүмкін болмады",
+  "author": "Автор: ",
+  "category": "Санат: ",
+  "type": "Түрі: ",
+  "status": "Мәртебесі: ",
+  "inLibrary": "Кітапханада",
+  "booked": "Брондалған",
+  "book": "Брондау",
+  "description": "Сипаттама:"
 }

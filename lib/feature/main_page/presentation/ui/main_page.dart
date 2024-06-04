@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
 
   final _screens = const [
-    HomePage(),
+    HomeBuilder(),
     SearchPage(),
     SavedPage(),
     ProfilePage(),

@@ -23,6 +23,11 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Профиль"),
+        "author": MessageLookupByLibrary.simpleMessage("Автор: "),
+        "book": MessageLookupByLibrary.simpleMessage("Брондау"),
+        "booked": MessageLookupByLibrary.simpleMessage("Брондалған"),
+        "category": MessageLookupByLibrary.simpleMessage("Санат: "),
+        "description": MessageLookupByLibrary.simpleMessage("Сипаттама:"),
         "doNotHaveAccount":
             MessageLookupByLibrary.simpleMessage("Әлі тіркелмеген?"),
         "edit": MessageLookupByLibrary.simpleMessage("Өзгерту"),
@@ -36,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Тіркелу үшін мәліметтеріңізді толтырыңыз"),
         "happyReading": MessageLookupByLibrary.simpleMessage("Жақсы оқу!"),
         "home": MessageLookupByLibrary.simpleMessage("Негізгі"),
+        "inLibrary": MessageLookupByLibrary.simpleMessage("Кітапханада"),
         "latestBooks": MessageLookupByLibrary.simpleMessage("Соңғы кітаптар"),
         "launchDescription": MessageLookupByLibrary.simpleMessage(
             "Біздің онлайн кітапхана қолданбасымен ашып, демалыңыз. Қай жерде болсаңыз да оқып, ұнайтын кітаптарды табыңыз. Қызықты оқулар!"),
@@ -47,7 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "saved": MessageLookupByLibrary.simpleMessage("Таңдаулылар"),
         "search": MessageLookupByLibrary.simpleMessage("Іздеу"),
         "seeMore": MessageLookupByLibrary.simpleMessage("көбірек біліңіз"),
+        "status": MessageLookupByLibrary.simpleMessage("Мәртебесі: "),
         "topBooks": MessageLookupByLibrary.simpleMessage("Үздік кітаптар"),
+        "type": MessageLookupByLibrary.simpleMessage("Түрі: "),
         "upcomingBooks":
             MessageLookupByLibrary.simpleMessage("Алдағы кітаптар"),
         "username": MessageLookupByLibrary.simpleMessage("Қолданушының аты")

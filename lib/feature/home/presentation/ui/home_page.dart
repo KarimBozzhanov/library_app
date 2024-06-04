@@ -31,149 +31,190 @@ class HomePage extends StatelessWidget {
         listener: (context, state) {
           if (state is BooksFailureState) {
             showTopSnackBar(
-                Overlay.of(context),
-                CustomSnackBar.error(
-                  message: S.current.failedToRetrieveData,
-                ));
+              Overlay.of(context),
+              CustomSnackBar.error(
+                message: S.current.failedToRetrieveData,
+              ),
+            );
           }
         },
         builder: (context, state) {
           if (state is BooksSuccessState) {
-            return SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.current.happyReading,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.rdBlack,
+            return RefreshIndicator(
+              onRefresh: () => onRefresh(context),
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            S.current.happyReading,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.rdBlack,
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.search,
-                            size: 32,
-                            color: AppColors.rdBlack,
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.search,
+                              size: 32,
+                              color: AppColors.rdBlack,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.current.topBooks,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                            color: AppColors.rdBlack,
-                          ),
+                    Visibility(
+                      visible: state.topBooks.isNotEmpty,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.current.topBooks,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: AppColors.rdBlack,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                S.current.seeMore,
+                                style: const TextStyle(
+                                    color: AppColors.rdBlack,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ],
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            S.current.seeMore,
-                            style: const TextStyle(color: AppColors.rdBlack, fontSize: 14, fontWeight: FontWeight.w400),
-                          ),
+                      ),
+                    ),
+                    Visibility(
+                      visible: state.topBooks.isNotEmpty,
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 16),
+                        height: 320,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: state.topBooks.length,
+                          itemBuilder: (context, index) =>
+                              BookCard(state.topBooks[index]),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(left: 16),
-                    height: 320,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: state.topBooks.length,
-                      itemBuilder: (context, index) => BookCard(state.topBooks[index]),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.current.latestBooks,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                            color: AppColors.rdBlack,
-                          ),
+                    Visibility(
+                      visible: state.latestBooks.isNotEmpty,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.current.latestBooks,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: AppColors.rdBlack,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                S.current.seeMore,
+                                style: const TextStyle(
+                                    color: AppColors.rdBlack,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ],
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            S.current.seeMore,
-                            style: const TextStyle(color: AppColors.rdBlack, fontSize: 14, fontWeight: FontWeight.w400),
-                          ),
+                      ),
+                    ),
+                    Visibility(
+                      visible: state.latestBooks.isNotEmpty,
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 16),
+                        height: 320,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: state.latestBooks.length,
+                          itemBuilder: (context, index) =>
+                              BookCard(state.latestBooks[index]),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(left: 16),
-                    height: 320,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: state.latestBooks.length,
-                      itemBuilder: (context, index) => BookCard(state.latestBooks[index]),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.current.upcomingBooks,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                            color: AppColors.rdBlack,
-                          ),
+                    Visibility(
+                      visible: state.upcomingBooks.isNotEmpty,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.current.upcomingBooks,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: AppColors.rdBlack,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                S.current.seeMore,
+                                style: const TextStyle(
+                                    color: AppColors.rdBlack,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ],
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            S.current.seeMore,
-                            style: const TextStyle(color: AppColors.rdBlack, fontSize: 14, fontWeight: FontWeight.w400),
-                          ),
+                      ),
+                    ),
+                    Visibility(
+                      visible: state.upcomingBooks.isNotEmpty,
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 16),
+                        height: 320,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: state.upcomingBooks.length,
+                          itemBuilder: (context, index) =>
+                              BookCard(state.upcomingBooks[index]),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(left: 16),
-                    height: 320,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: state.upcomingBooks.length,
-                      itemBuilder: (context, index) => BookCard(state.upcomingBooks[index]),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           } else if (state is BooksEmptyState || state is BooksFailureState) {
-            return Center(
-              child: Text(
-                S.current.emptyList,
-                style: const TextStyle(
-                  color: AppColors.rdBlack,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+            return RefreshIndicator(
+              onRefresh: () => onRefresh(context),
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: Center(
+                  child: Text(
+                    S.current.emptyList,
+                    style: const TextStyle(
+                      color: AppColors.rdBlack,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ),
               ),
             );
@@ -184,5 +225,9 @@ class HomePage extends StatelessWidget {
         },
       ),
     );
+  }
+  
+  Future<void> onRefresh(BuildContext context) async {
+    context.read<BooksCubit>().getBooks();
   }
 }

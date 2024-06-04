@@ -8,4 +8,10 @@ class CloudFirestoreApiService {
     final documents = await collection.get();
     return documents.docs;
   }
+
+  Future<void> book(String bookId) async {
+    final getDocumentById = await collection.where("id", isEqualTo: bookId).get();
+    final book = getDocumentById.docs.first.id;
+    final document = await collection.doc(book).get();
+  }
 }

@@ -22,5 +22,13 @@
   "upcomingBooks": "Upcoming Books",
   "seeMore": "see more",
   "emptyList": "List is empty",
-  "failedToRetrieveData": "Failed to retrieve data"
+  "failedToRetrieveData": "Failed to retrieve data",
+  "author": "Author: ",
+  "category": "Category: ",
+  "type": "Type: ",
+  "status": "Status: ",
+  "inLibrary": "In library",
+  "booked": "Booked",
+  "book": "Book",
+  "description": "Description:"
 }

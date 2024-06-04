@@ -23,6 +23,11 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Профиль"),
+        "author": MessageLookupByLibrary.simpleMessage("Автор: "),
+        "book": MessageLookupByLibrary.simpleMessage("Забронировать"),
+        "booked": MessageLookupByLibrary.simpleMessage("Забронирована"),
+        "category": MessageLookupByLibrary.simpleMessage("Категория: "),
+        "description": MessageLookupByLibrary.simpleMessage("Описание:"),
         "doNotHaveAccount":
             MessageLookupByLibrary.simpleMessage("Еще не зарегистрированы?"),
         "edit": MessageLookupByLibrary.simpleMessage("Изменить"),
@@ -37,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "happyReading":
             MessageLookupByLibrary.simpleMessage("Приятного чтения!"),
         "home": MessageLookupByLibrary.simpleMessage("Главная"),
+        "inLibrary": MessageLookupByLibrary.simpleMessage("В библиотеке"),
         "latestBooks": MessageLookupByLibrary.simpleMessage("Последние книги"),
         "launchDescription": MessageLookupByLibrary.simpleMessage(
             "Откройте и расслабьтесь с нашим приложением онлайн-библиотеки. Читайте откуда угодно и находите книги, которые вам нравятся. Приятного чтения!"),
@@ -47,7 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "saved": MessageLookupByLibrary.simpleMessage("Избранное"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "seeMore": MessageLookupByLibrary.simpleMessage("узнать больше"),
+        "status": MessageLookupByLibrary.simpleMessage("Статус: "),
         "topBooks": MessageLookupByLibrary.simpleMessage("Лучшие книги"),
+        "type": MessageLookupByLibrary.simpleMessage("Тип: "),
         "upcomingBooks":
             MessageLookupByLibrary.simpleMessage("Предстоящие книги"),
         "username": MessageLookupByLibrary.simpleMessage("Имя пользователя")
