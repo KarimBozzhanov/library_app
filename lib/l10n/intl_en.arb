@@ -20,5 +20,7 @@
   "topBooks": "Top Books",
   "latestBooks": "Latest Books",
   "upcomingBooks": "Upcoming Books",
-  "seeMore": "see more"
+  "seeMore": "see more",
+  "emptyList": "List is empty",
+  "failedToRetrieveData": "Failed to retrieve data"
 }

@@ -259,6 +259,26 @@ class S {
       args: [],
     );
   }
+
+  /// `List is empty`
+  String get emptyList {
+    return Intl.message(
+      'List is empty',
+      name: 'emptyList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to retrieve data`
+  String get failedToRetrieveData {
+    return Intl.message(
+      'Failed to retrieve data',
+      name: 'failedToRetrieveData',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

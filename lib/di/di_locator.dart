@@ -1,6 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:library_app/common/data/network/auth_api_service.dart';
+import 'package:library_app/common/data/network/cloud_firestore_api_service.dart';
 import 'package:library_app/common/presentation/localization/data/prefs/global_localization_data_source.dart';
 import 'package:library_app/common/presentation/localization/data/repository/global_localization_repository.dart';
 import 'package:library_app/common/presentation/localization/domain/use_case/global_localization_use_case.dart';
@@ -13,6 +14,8 @@ import 'package:library_app/feature/auth/login/data/repository/login_repository.
 import 'package:library_app/feature/auth/login/domain/use_case/login_use_case.dart';
 import 'package:library_app/feature/auth/registration/data/repository/registration_repository.dart';
 import 'package:library_app/feature/auth/registration/domain/use_case/registration_use_case.dart';
+import 'package:library_app/feature/home/data/repository/books_repository.dart';
+import 'package:library_app/feature/home/domain/use_case/get_books_use_case.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;
@@ -39,7 +42,9 @@ Future<void> _dataSourceModule() async {
 }
 
 void _apiServiceModule() {
-  sl.registerSingleton(AuthApiService());
+  sl
+    ..registerSingleton(AuthApiService())
+    ..registerSingleton(CloudFirestoreApiService());
 }
 
 void _repositoryModule() {
@@ -48,7 +53,8 @@ void _repositoryModule() {
     ..registerFactory(LoginRepository.new)
     ..registerFactory(RegistrationRepository.new)
     ..registerFactory(GlobalLocalizationRepository.new)
-    ..registerFactory(GlobalAuthRepository.new);
+    ..registerFactory(GlobalAuthRepository.new)
+    ..registerFactory(BooksRepository.new);
 }
 
 void _useCaseModule() {
@@ -59,5 +65,6 @@ void _useCaseModule() {
     ..registerFactory(GlobalGetLocalizationUseCase.new)
     ..registerFactory(GlobalSetLocalizationUseCase.new)
     ..registerFactory(GlobalRemoveLocalizationUseCase.new)
-    ..registerFactory(GlobalLogOutUseCase.new);
+    ..registerFactory(GlobalLogOutUseCase.new)
+    ..registerFactory(GetBooksUseCase.new);
 }

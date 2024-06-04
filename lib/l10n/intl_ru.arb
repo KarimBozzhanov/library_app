@@ -20,5 +20,7 @@
   "topBooks": "Лучшие книги",
   "latestBooks": "Последние книги",
   "upcomingBooks": "Предстоящие книги",
-  "seeMore": "узнать больше"
+  "seeMore": "узнать больше",
+  "emptyList": "Список пуст",
+  "failedToRetrieveData": "Не удалось получить данные"
 }

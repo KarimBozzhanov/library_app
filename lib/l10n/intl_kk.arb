@@ -20,5 +20,7 @@
   "topBooks": "Үздік кітаптар",
   "latestBooks": "Соңғы кітаптар",
   "upcomingBooks": "Алдағы кітаптар",
-  "seeMore": "көбірек біліңіз"
+  "seeMore": "көбірек біліңіз",
+  "emptyList": "Тізім бос",
+  "failedToRetrieveData": "Деректерді алу мүмкін болмады"
 }

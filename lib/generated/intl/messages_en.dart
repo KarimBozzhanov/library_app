@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don\'t have account?"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emptyList": MessageLookupByLibrary.simpleMessage("List is empty"),
+        "failedToRetrieveData":
+            MessageLookupByLibrary.simpleMessage("Failed to retrieve data"),
         "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
             "Please fill your details to login"),
         "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(

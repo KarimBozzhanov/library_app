@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Еще не зарегистрированы?"),
         "edit": MessageLookupByLibrary.simpleMessage("Изменить"),
         "email": MessageLookupByLibrary.simpleMessage("Электронная почта"),
+        "emptyList": MessageLookupByLibrary.simpleMessage("Список пуст"),
+        "failedToRetrieveData":
+            MessageLookupByLibrary.simpleMessage("Не удалось получить данные"),
         "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, заполните свои данные, чтобы войти"),
         "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(

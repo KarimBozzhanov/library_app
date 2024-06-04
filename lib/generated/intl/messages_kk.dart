@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Әлі тіркелмеген?"),
         "edit": MessageLookupByLibrary.simpleMessage("Өзгерту"),
         "email": MessageLookupByLibrary.simpleMessage("Электрондық пошта"),
+        "emptyList": MessageLookupByLibrary.simpleMessage("Тізім бос"),
+        "failedToRetrieveData": MessageLookupByLibrary.simpleMessage(
+            "Деректерді алу мүмкін болмады"),
         "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
             "Жүйеге кіру үшін мәліметтеріңізді толтырыңыз"),
         "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(

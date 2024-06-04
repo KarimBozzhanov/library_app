@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/config/theme.dart';
+import 'package:library_app/feature/home/domain/entity/book_entity.dart';
 
 class BookCard extends StatelessWidget {
-  const BookCard({super.key});
+  const BookCard(this.book, {super.key});
+
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -37,23 +40,23 @@ class BookCard extends StatelessWidget {
               ),
             ),
             padding: const EdgeInsets.fromLTRB(10, 12, 10, 19),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Classic',
+                  book.category,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: AppColors.lightGrey,
                     fontWeight: FontWeight.w300,
                     fontSize: 11,
                   ),
                 ),
                 Text(
-                  'The Picture of Dorian Gray',
+                  book.name,
                   maxLines: 2,
-                  style: TextStyle(
+                  style: const TextStyle(
                     overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
@@ -61,26 +64,16 @@ class BookCard extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 8, bottom: 17),
+                  padding: const EdgeInsets.only(top: 8, bottom: 17),
                   child: Text(
-                    'Oscar Wilde',
+                    book.author,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                       fontSize: 11,
                     ),
-                  ),
-                ),
-                Text(
-                  '\$25.00',
-                  maxLines: 1,
-                  style: TextStyle(
-                    overflow: TextOverflow.ellipsis,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
                   ),
                 ),
               ],
