@@ -18,9 +18,9 @@ class _MainPageState extends State<MainPage> {
 
   final _screens = const [
     HomeBuilder(),
-    SearchPage(),
-    SavedPage(),
-    ProfilePage(),
+    SearchBuilder(),
+    SavedBuilder(),
+    ProfileBuilder(),
   ];
 
   void onItemTap(int index) {

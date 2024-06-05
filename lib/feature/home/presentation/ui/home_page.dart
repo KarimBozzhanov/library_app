@@ -52,20 +52,15 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            S.current.happyReading,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.rdBlack,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.search,
-                              size: 32,
-                              color: AppColors.rdBlack,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: Text(
+                              S.current.happyReading,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.rdBlack,
+                              ),
                             ),
                           ),
                         ],
@@ -226,7 +221,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-  
+
   Future<void> onRefresh(BuildContext context) async {
     context.read<BooksCubit>().getBooks();
   }

@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class BookDto {
   BookDto({
     this.id,
@@ -9,10 +11,11 @@ class BookDto {
     this.type,
     this.userId,
     this.canAdd,
+    this.downloadUrl,
   });
 
-  factory BookDto.fromJson(Map<String, dynamic> json) => BookDto(
-    id: json['id'] as String?,
+  factory BookDto.fromJson(Map<String, dynamic> json, String id) => BookDto(
+    id: id,
     name: json['name'] as String?,
     description: json['description'] as String?,
     author: json['author'] as String?,
@@ -21,7 +24,10 @@ class BookDto {
     type: json['type'] as int?,
     userId: json['user_id'] as String?,
     canAdd: json['can_add'] as bool?,
+    downloadUrl: json['download_url'] as String?,
   );
+
+  factory BookDto.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot) => BookDto.fromJson(snapshot.data() ?? {}, snapshot.id);
 
   final String? id;
   final String? name;
@@ -32,4 +38,5 @@ class BookDto {
   final int? type;
   final String? userId;
   final bool? canAdd;
+  final String? downloadUrl;
 }

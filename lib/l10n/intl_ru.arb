@@ -5,6 +5,7 @@
   "username": "Имя пользователя",
   "email": "Электронная почта",
   "password": "Пароль",
+  "phoneNumber": "Номер телефона",
   "repPassword": "Повторите пароль",
   "doNotHaveAccount": "Еще не зарегистрированы?",
   "signUpHere": "Регистрация",
@@ -30,5 +31,16 @@
   "inLibrary": "В библиотеке",
   "booked": "Забронирована",
   "book": "Забронировать",
-  "description": "Описание:"
+  "description": "Описание:",
+  "bookAddedToFavorites": "Книга добавлена в избранное",
+  "download": "Скачать",
+  "group": "Группа",
+  "russianLanguage": "Русский",
+  "englishLanguage": "Английский",
+  "english": "English",
+  "kazakhLanguage": "Қазақша",
+  "russia": "Россия",
+  "usa": "США",
+  "kazakhstan": "Казахстан",
+  "appLanguage": "Язык приложения"
 }

@@ -9,6 +9,6 @@ class BooksRepository {
 
   Future<List<BookDto>> getBooks() async {
     final documents = await _apiService.getBooks();
-    return documents.map((book) => BookDto.fromJson(book.data())).toList();
+    return documents.map((book) => BookDto.fromSnapshot(book)).toList();
   }
 }

@@ -5,6 +5,7 @@
   "username": "Username",
   "email": "Email",
   "password": "Password",
+  "phoneNumber": "Phone number",
   "repPassword": "Confirm password",
   "doNotHaveAccount": "Don't have account?",
   "register": "Register",
@@ -30,5 +31,16 @@
   "inLibrary": "In library",
   "booked": "Booked",
   "book": "Book",
-  "description": "Description:"
+  "description": "Description:",
+  "bookAddedToFavorites": "Book added to favorites",
+  "download": "Download",
+  "group": "Group",
+  "russianLanguage": "Русский",
+  "englishLanguage": "English",
+  "english": "English",
+  "kazakhLanguage": "Қазақша",
+  "russia": "Russia",
+  "usa": "USA",
+  "kazakhstan": "Kazakhstan",
+  "appLanguage": "App language"
 }

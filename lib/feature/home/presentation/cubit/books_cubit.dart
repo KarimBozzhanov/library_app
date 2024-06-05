@@ -12,13 +12,13 @@ class BooksCubit extends Cubit<CoreState> {
         super(BooksInitialState());
 
   final GetBooksUseCase _booksUseCase;
-  List<BookEntity> _books = [];
+  List<BookEntity> books = [];
 
   Future<void> getBooks() async {
     emit(BooksLoadingState());
     try {
-      _books = await _booksUseCase.execute();
-      if (_books.isEmpty) {
+      books = await _booksUseCase.execute();
+      if (books.isEmpty) {
         emit(BooksEmptyState());
         return;
       }
@@ -35,17 +35,17 @@ class BooksCubit extends Cubit<CoreState> {
   }
 
   List<BookEntity> getTopBooks() {
-    final newList = _books.where((book) => book.type == 0).toList();
+    final newList = books.where((book) => book.type == 0).toList();
     return newList;
   }
 
   List<BookEntity> getLatestBooks() {
-    final newList = _books.where((book) => book.type == 1).toList();
+    final newList = books.where((book) => book.type == 1).toList();
     return newList;
   }
 
   List<BookEntity> getUpcomingBooks() {
-    final newList = _books.where((book) => book.type == 2).toList();
+    final newList = books.where((book) => book.type == 2).toList();
     return newList;
   }
 }

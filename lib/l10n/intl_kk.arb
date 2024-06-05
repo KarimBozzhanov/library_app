@@ -5,6 +5,7 @@
   "username": "Қолданушының аты",
   "email": "Электрондық пошта",
   "password": "Құпия сөз",
+  "phoneNumber": "Телефон нөмірі",
   "repPassword": "Құпия сөзді қайталаңыз",
   "doNotHaveAccount": "Әлі тіркелмеген?",
   "signUpHere": "Тіркеу",
@@ -30,5 +31,16 @@
   "inLibrary": "Кітапханада",
   "booked": "Брондалған",
   "book": "Брондау",
-  "description": "Сипаттама:"
+  "description": "Сипаттама:",
+  "bookAddedToFavorites": "Кітап таңдаулыларға қосылды",
+  "download": "Жүктеу",
+  "group": "Топ",
+  "russianLanguage": "Орыс",
+  "englishLanguage": "Ағылшын",
+  "english": "English",
+  "kazakhLanguage": "Қазақша",
+  "russia": "Ресей",
+  "usa": "АҚШ",
+  "kazakhstan": "Қазақстан",
+  "appLanguage": "Қолдану тілі"
 }

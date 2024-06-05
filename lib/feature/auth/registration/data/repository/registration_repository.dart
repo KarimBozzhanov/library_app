@@ -11,4 +11,8 @@ class RegistrationRepository {
     final credential = await _apiService.registration(param);
     return credential.user;
   }
+
+  Future<void> addUser(Map<String, dynamic> data) async {
+    await _apiService.addUser(data);
+  }
 }

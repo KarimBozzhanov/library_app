@@ -13,12 +13,14 @@ class BookCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: GestureDetector(
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BookDetailsScreen(book),
-          ),
-        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BookDetailsBuilder(book.id),
+            ),
+          );
+        },
         child: Column(
           children: [
             Container(

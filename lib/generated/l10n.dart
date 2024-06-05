@@ -100,6 +100,16 @@ class S {
     );
   }
 
+  /// `Phone number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm password`
   String get repPassword {
     return Intl.message(
@@ -355,6 +365,116 @@ class S {
     return Intl.message(
       'Description:',
       name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book added to favorites`
+  String get bookAddedToFavorites {
+    return Intl.message(
+      'Book added to favorites',
+      name: 'bookAddedToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download`
+  String get download {
+    return Intl.message(
+      'Download',
+      name: 'download',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Group`
+  String get group {
+    return Intl.message(
+      'Group',
+      name: 'group',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Русский`
+  String get russianLanguage {
+    return Intl.message(
+      'Русский',
+      name: 'russianLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get englishLanguage {
+    return Intl.message(
+      'English',
+      name: 'englishLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Қазақша`
+  String get kazakhLanguage {
+    return Intl.message(
+      'Қазақша',
+      name: 'kazakhLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Russia`
+  String get russia {
+    return Intl.message(
+      'Russia',
+      name: 'russia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `USA`
+  String get usa {
+    return Intl.message(
+      'USA',
+      name: 'usa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kazakhstan`
+  String get kazakhstan {
+    return Intl.message(
+      'Kazakhstan',
+      name: 'kazakhstan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App language`
+  String get appLanguage {
+    return Intl.message(
+      'App language',
+      name: 'appLanguage',
       desc: '',
       args: [],
     );

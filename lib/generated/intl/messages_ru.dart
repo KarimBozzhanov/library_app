@@ -23,33 +23,45 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Профиль"),
+        "appLanguage": MessageLookupByLibrary.simpleMessage("Язык приложения"),
         "author": MessageLookupByLibrary.simpleMessage("Автор: "),
         "book": MessageLookupByLibrary.simpleMessage("Забронировать"),
+        "bookAddedToFavorites":
+            MessageLookupByLibrary.simpleMessage("Книга добавлена в избранное"),
         "booked": MessageLookupByLibrary.simpleMessage("Забронирована"),
         "category": MessageLookupByLibrary.simpleMessage("Категория: "),
         "description": MessageLookupByLibrary.simpleMessage("Описание:"),
         "doNotHaveAccount":
             MessageLookupByLibrary.simpleMessage("Еще не зарегистрированы?"),
+        "download": MessageLookupByLibrary.simpleMessage("Скачать"),
         "edit": MessageLookupByLibrary.simpleMessage("Изменить"),
         "email": MessageLookupByLibrary.simpleMessage("Электронная почта"),
         "emptyList": MessageLookupByLibrary.simpleMessage("Список пуст"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "englishLanguage": MessageLookupByLibrary.simpleMessage("Английский"),
         "failedToRetrieveData":
             MessageLookupByLibrary.simpleMessage("Не удалось получить данные"),
         "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, заполните свои данные, чтобы войти"),
         "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, заполните свои данные, чтобы зарегистрироваться"),
+        "group": MessageLookupByLibrary.simpleMessage("Группа"),
         "happyReading":
             MessageLookupByLibrary.simpleMessage("Приятного чтения!"),
         "home": MessageLookupByLibrary.simpleMessage("Главная"),
         "inLibrary": MessageLookupByLibrary.simpleMessage("В библиотеке"),
+        "kazakhLanguage": MessageLookupByLibrary.simpleMessage("Қазақша"),
+        "kazakhstan": MessageLookupByLibrary.simpleMessage("Казахстан"),
         "latestBooks": MessageLookupByLibrary.simpleMessage("Последние книги"),
         "launchDescription": MessageLookupByLibrary.simpleMessage(
             "Откройте и расслабьтесь с нашим приложением онлайн-библиотеки. Читайте откуда угодно и находите книги, которые вам нравятся. Приятного чтения!"),
         "logIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "logOut": MessageLookupByLibrary.simpleMessage("Выйти"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефона"),
         "repPassword": MessageLookupByLibrary.simpleMessage("Повторите пароль"),
+        "russia": MessageLookupByLibrary.simpleMessage("Россия"),
+        "russianLanguage": MessageLookupByLibrary.simpleMessage("Русский"),
         "saved": MessageLookupByLibrary.simpleMessage("Избранное"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "seeMore": MessageLookupByLibrary.simpleMessage("узнать больше"),
@@ -58,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "type": MessageLookupByLibrary.simpleMessage("Тип: "),
         "upcomingBooks":
             MessageLookupByLibrary.simpleMessage("Предстоящие книги"),
+        "usa": MessageLookupByLibrary.simpleMessage("США"),
         "username": MessageLookupByLibrary.simpleMessage("Имя пользователя")
       };
 }

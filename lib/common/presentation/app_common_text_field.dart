@@ -29,6 +29,8 @@ class AppCommonTextField extends StatelessWidget {
         controller: textEditingController,
         keyboardType: keyboardType,
         obscureText: isPassword,
+        onChanged: onChanged,
+        onSubmitted: onSubmitted,
         decoration: InputDecoration(
           hintText: label,
           filled: true,

@@ -13,9 +13,15 @@ import 'package:library_app/feature/auth/global_auth/domain/use_case/global_sign
 import 'package:library_app/feature/auth/login/data/repository/login_repository.dart';
 import 'package:library_app/feature/auth/login/domain/use_case/login_use_case.dart';
 import 'package:library_app/feature/auth/registration/data/repository/registration_repository.dart';
+import 'package:library_app/feature/auth/registration/domain/use_case/add_user_use_case.dart';
 import 'package:library_app/feature/auth/registration/domain/use_case/registration_use_case.dart';
+import 'package:library_app/feature/book_details/data/repository/book_details_repository.dart';
+import 'package:library_app/feature/book_details/domain/use_case/book_details_use_case.dart';
+import 'package:library_app/feature/book_details/domain/use_case/get_book_details_use_case.dart';
 import 'package:library_app/feature/home/data/repository/books_repository.dart';
 import 'package:library_app/feature/home/domain/use_case/get_books_use_case.dart';
+import 'package:library_app/feature/profile/data/repository/profile_repository.dart';
+import 'package:library_app/feature/profile/domain/use_case/profile_use_case.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;
@@ -54,7 +60,9 @@ void _repositoryModule() {
     ..registerFactory(RegistrationRepository.new)
     ..registerFactory(GlobalLocalizationRepository.new)
     ..registerFactory(GlobalAuthRepository.new)
-    ..registerFactory(BooksRepository.new);
+    ..registerFactory(BooksRepository.new)
+    ..registerFactory(BookDetailsRepository.new)
+    ..registerFactory(ProfileRepository.new);
 }
 
 void _useCaseModule() {
@@ -66,5 +74,9 @@ void _useCaseModule() {
     ..registerFactory(GlobalSetLocalizationUseCase.new)
     ..registerFactory(GlobalRemoveLocalizationUseCase.new)
     ..registerFactory(GlobalLogOutUseCase.new)
-    ..registerFactory(GetBooksUseCase.new);
+    ..registerFactory(GetBooksUseCase.new)
+    ..registerFactory(BookDetailsUseCase.new)
+    ..registerFactory(GetBookDetailsUseCase.new)
+    ..registerFactory(ProfileUseCase.new)
+    ..registerFactory(AddUserUseCase.new);
 }

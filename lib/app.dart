@@ -37,7 +37,9 @@ class MyApp extends StatelessWidget {
               GlobalCupertinoLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
             ],
-            locale: state.locale.isNotEmpty ? Locale(state.locale, CoreConstant.empty) : AppLocale.ru,
+            locale: state.locale.isNotEmpty
+                ? Locale(state.locale, CoreConstant.empty)
+                : AppLocale.ru,
             supportedLocales: S.delegate.supportedLocales,
             home: const SafeArea(child: SplashScreen()),
           );
