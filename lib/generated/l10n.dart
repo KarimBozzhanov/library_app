@@ -19,7 +19,7 @@ class S {
 
   static S get current {
     assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.of(context).');
     return _current!;
   }
 
@@ -50,20 +50,20 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Discover and relax with our online library app. Read from anywhere and find books you'll love. Happy reading!`
+  /// `Open and enjoy our blogging app. Share your thoughts, publish ideas, and find inspiration! Happy blogging!`
   String get launchDescription {
     return Intl.message(
-      'Discover and relax with our online library app. Read from anywhere and find books you\'ll love. Happy reading!',
+      'Open and enjoy our blogging app. Share your thoughts, publish ideas, and find inspiration! Happy blogging!',
       name: 'launchDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Get Started`
+  /// `Log In`
   String get logIn {
     return Intl.message(
-      'Get Started',
+      'Log In',
       name: 'logIn',
       desc: '',
       args: [],
@@ -100,60 +100,60 @@ class S {
     );
   }
 
-  /// `Phone number`
+  /// `Phone Number`
   String get phoneNumber {
     return Intl.message(
-      'Phone number',
+      'Phone Number',
       name: 'phoneNumber',
       desc: '',
       args: [],
     );
   }
 
-  /// `Confirm password`
+  /// `Repeat Password`
   String get repPassword {
     return Intl.message(
-      'Confirm password',
+      'Repeat Password',
       name: 'repPassword',
       desc: '',
       args: [],
     );
   }
 
-  /// `Don't have account?`
+  /// `Don't have an account?`
   String get doNotHaveAccount {
     return Intl.message(
-      'Don\'t have account?',
+      'Don\'t have an account?',
       name: 'doNotHaveAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Register`
-  String get register {
+  /// `Sign Up`
+  String get signUpHere {
     return Intl.message(
-      'Register',
-      name: 'register',
+      'Sign Up',
+      name: 'signUpHere',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please fill your details to login`
+  /// `Please fill in your details to log in`
   String get fillYourDetailsToLogin {
     return Intl.message(
-      'Please fill your details to login',
+      'Please fill in your details to log in',
       name: 'fillYourDetailsToLogin',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please fill your details to sign up`
+  /// `Please fill in your details to sign up`
   String get fillYourDetailsToSignUp {
     return Intl.message(
-      'Please fill your details to sign up',
+      'Please fill in your details to sign up',
       name: 'fillYourDetailsToSignUp',
       desc: '',
       args: [],
@@ -170,10 +170,10 @@ class S {
     );
   }
 
-  /// `Saved`
+  /// `Favorites`
   String get saved {
     return Intl.message(
-      'Saved',
+      'Favorites',
       name: 'saved',
       desc: '',
       args: [],
@@ -190,30 +190,30 @@ class S {
     );
   }
 
-  /// `Account`
+  /// `Profile`
   String get account {
     return Intl.message(
-      'Account',
+      'Profile',
       name: 'account',
       desc: '',
       args: [],
     );
   }
 
-  /// `Happy Reading!`
+  /// `Happy blogging!`
   String get happyReading {
     return Intl.message(
-      'Happy Reading!',
+      'Happy blogging!',
       name: 'happyReading',
       desc: '',
       args: [],
     );
   }
 
-  /// `Log out`
+  /// `Log Out`
   String get logOut {
     return Intl.message(
-      'Log out',
+      'Log Out',
       name: 'logOut',
       desc: '',
       args: [],
@@ -230,30 +230,30 @@ class S {
     );
   }
 
-  /// `Top Books`
+  /// `Popular Posts`
   String get topBooks {
     return Intl.message(
-      'Top Books',
+      'Popular Posts',
       name: 'topBooks',
       desc: '',
       args: [],
     );
   }
 
-  /// `Latest Books`
+  /// `Latest Posts`
   String get latestBooks {
     return Intl.message(
-      'Latest Books',
+      'Latest Posts',
       name: 'latestBooks',
       desc: '',
       args: [],
     );
   }
 
-  /// `Upcoming Books`
+  /// `Upcoming Posts`
   String get upcomingBooks {
     return Intl.message(
-      'Upcoming Books',
+      'Upcoming Posts',
       name: 'upcomingBooks',
       desc: '',
       args: [],
@@ -330,30 +330,30 @@ class S {
     );
   }
 
-  /// `In library`
+  /// `Published`
   String get inLibrary {
     return Intl.message(
-      'In library',
+      'Published',
       name: 'inLibrary',
       desc: '',
       args: [],
     );
   }
 
-  /// `Booked`
+  /// `Draft`
   String get booked {
     return Intl.message(
-      'Booked',
+      'Draft',
       name: 'booked',
       desc: '',
       args: [],
     );
   }
 
-  /// `Book`
+  /// `Publish`
   String get book {
     return Intl.message(
-      'Book',
+      'Publish',
       name: 'book',
       desc: '',
       args: [],
@@ -370,10 +370,10 @@ class S {
     );
   }
 
-  /// `Book added to favorites`
+  /// `Post added to favorites`
   String get bookAddedToFavorites {
     return Intl.message(
-      'Book added to favorites',
+      'Post added to favorites',
       name: 'bookAddedToFavorites',
       desc: '',
       args: [],
@@ -400,10 +400,10 @@ class S {
     );
   }
 
-  /// `Русский`
+  /// `Russian`
   String get russianLanguage {
     return Intl.message(
-      'Русский',
+      'Russian',
       name: 'russianLanguage',
       desc: '',
       args: [],
@@ -430,10 +430,10 @@ class S {
     );
   }
 
-  /// `Қазақша`
+  /// `Kazakh`
   String get kazakhLanguage {
     return Intl.message(
-      'Қазақша',
+      'Kazakh',
       name: 'kazakhLanguage',
       desc: '',
       args: [],
@@ -470,11 +470,81 @@ class S {
     );
   }
 
-  /// `App language`
+  /// `App Language`
   String get appLanguage {
     return Intl.message(
-      'App language',
+      'App Language',
       name: 'appLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Post`
+  String get addPost {
+    return Intl.message(
+      'Create Post',
+      name: 'addPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get postTitle {
+    return Intl.message(
+      'Title',
+      name: 'postTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get postDescription {
+    return Intl.message(
+      'Description',
+      name: 'postDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tag`
+  String get postTag {
+    return Intl.message(
+      'Tag',
+      name: 'postTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post created`
+  String get postAdded {
+    return Intl.message(
+      'Post created',
+      name: 'postAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to create post`
+  String get failedToAddPost {
+    return Intl.message(
+      'Failed to create post',
+      name: 'failedToAddPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Comment`
+  String get addComment {
+    return Intl.message(
+      'Add Comment',
+      name: 'addComment',
       desc: '',
       args: [],
     );

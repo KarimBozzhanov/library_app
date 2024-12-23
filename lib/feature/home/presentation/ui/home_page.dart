@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/config/theme.dart';
-import 'package:library_app/feature/home/presentation/cubit/books_cubit.dart';
-import 'package:library_app/feature/home/presentation/ui/widgets/book_card.dart';
+import 'package:library_app/feature/home/presentation/cubit/posts_cubit.dart';
+import 'package:library_app/feature/home/presentation/ui/widgets/post_card.dart';
 import 'package:library_app/generated/l10n.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
@@ -14,7 +14,7 @@ class HomeBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => BooksCubit()..getBooks(),
+      create: (context) => PostsCubit()..getBooks(),
       child: const HomePage(),
     );
   }
@@ -27,19 +27,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.mainBackground,
-      body: BlocConsumer<BooksCubit, CoreState>(
+      body: BlocConsumer<PostsCubit, CoreState>(
         listener: (context, state) {
-          if (state is BooksFailureState) {
+          if (state is PostsFailureState) {
             showTopSnackBar(
               Overlay.of(context),
               CustomSnackBar.error(
-                message: S.current.failedToRetrieveData,
+                message: S.of(context).failedToRetrieveData,
               ),
             );
           }
         },
         builder: (context, state) {
-          if (state is BooksSuccessState) {
+          if (state is PostsSuccessState) {
             return RefreshIndicator(
               onRefresh: () => onRefresh(context),
               child: SingleChildScrollView(
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 16),
                             child: Text(
-                              S.current.happyReading,
+                              S.of(context).happyReading,
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -67,143 +67,28 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Visibility(
-                      visible: state.topBooks.isNotEmpty,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              S.current.topBooks,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: AppColors.rdBlack,
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                S.current.seeMore,
-                                style: const TextStyle(
-                                    color: AppColors.rdBlack,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: state.topBooks.isNotEmpty,
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 16),
-                        height: 320,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: state.topBooks.length,
-                          itemBuilder: (context, index) =>
-                              BookCard(state.topBooks[index]),
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: state.latestBooks.isNotEmpty,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              S.current.latestBooks,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: AppColors.rdBlack,
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                S.current.seeMore,
-                                style: const TextStyle(
-                                    color: AppColors.rdBlack,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: state.latestBooks.isNotEmpty,
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 16),
-                        height: 320,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: state.latestBooks.length,
-                          itemBuilder: (context, index) =>
-                              BookCard(state.latestBooks[index]),
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: state.upcomingBooks.isNotEmpty,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              S.current.upcomingBooks,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: AppColors.rdBlack,
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                S.current.seeMore,
-                                style: const TextStyle(
-                                    color: AppColors.rdBlack,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: state.upcomingBooks.isNotEmpty,
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 16),
-                        height: 320,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: state.upcomingBooks.length,
-                          itemBuilder: (context, index) =>
-                              BookCard(state.upcomingBooks[index]),
-                        ),
+                      visible: state.posts.isNotEmpty,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.only(left: 16, top: 20),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: state.posts.length,
+                        itemBuilder: (context, index) =>
+                            PostCard(state.posts[index]),
                       ),
                     ),
                   ],
                 ),
               ),
             );
-          } else if (state is BooksEmptyState || state is BooksFailureState) {
+          } else if (state is PostsEmptyState || state is PostsFailureState) {
             return RefreshIndicator(
               onRefresh: () => onRefresh(context),
               child: SingleChildScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
                 child: Center(
                   child: Text(
-                    S.current.emptyList,
+                    S.of(context).emptyList,
                     style: const TextStyle(
                       color: AppColors.rdBlack,
                       fontSize: 18,
@@ -223,6 +108,6 @@ class HomePage extends StatelessWidget {
   }
 
   Future<void> onRefresh(BuildContext context) async {
-    context.read<BooksCubit>().getBooks();
+    context.read<PostsCubit>().getBooks();
   }
 }

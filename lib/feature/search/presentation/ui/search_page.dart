@@ -4,7 +4,7 @@ import 'package:library_app/common/constant/core_constant.dart';
 import 'package:library_app/common/presentation/app_common_text_field.dart';
 import 'package:library_app/common/presentation/state/core_state.dart';
 import 'package:library_app/config/theme.dart';
-import 'package:library_app/feature/home/presentation/ui/widgets/book_card.dart';
+import 'package:library_app/feature/home/presentation/ui/widgets/post_card.dart';
 import 'package:library_app/feature/search/presentation/cubit/search_cubit.dart';
 import 'package:library_app/generated/l10n.dart';
 
@@ -51,31 +51,26 @@ class _SearchPageState extends State<SearchPage> {
             children: [
               AppCommonTextField(
                 textEditingController: searchController,
-                label: S.current.search,
+                label: S.of(context).search,
                 margin: const EdgeInsets.only(bottom: 24, top: 30),
                 onChanged: (input) => context.read<SearchCubit>().search(input),
               ),
               BlocBuilder<SearchCubit, CoreState>(
                 builder: (context, state) {
                   if (state is SearchSuccessState) {
-                    return GridView.builder(
-                      shrinkWrap: true,
+                    return ListView.builder(
+                      padding: const EdgeInsets.only(left: 16, top: 20),
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: state.books.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 1 / 4,
-                      ),
-                      itemBuilder: (context, index) => BookCard(
-                        state.books[index],
-                      ),
+                      shrinkWrap: true,
+                      itemCount: state.posts.length,
+                      itemBuilder: (context, index) =>
+                          PostCard(state.posts[index]),
                     );
                   } else if (state is SearchEmptyState) {
                     return Container(
                       alignment: Alignment.center,
                       child: Text(
-                        S.current.emptyList,
+                        S.of(context).emptyList,
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,

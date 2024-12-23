@@ -34,7 +34,7 @@ class LaunchScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  S.current.launchDescription,
+                  S.of(context).launchDescription,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 14,
@@ -52,7 +52,7 @@ class LaunchScreen extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(16, 70, 16, 14),
                   backgroundColor: AppColors.rdBlack,
                   child: Text(
-                    S.current.logIn,
+                    S.of(context).logIn,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
@@ -71,7 +71,7 @@ class LaunchScreen extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   backgroundColor: Colors.transparent,
                   child: Text(
-                    S.current.register,
+                    S.of(context).signUpHere,
                     style: const TextStyle(
                       color: AppColors.rdBlack,
                       fontSize: 14,

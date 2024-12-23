@@ -42,7 +42,7 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 32),
                     child: Text(
-                      S.current.account,
+                      S.of(context).account,
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -178,7 +178,7 @@ class ProfilePage extends StatelessWidget {
                           borderRadius: 8,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           child: Text(
-                            S.current.logOut,
+                            S.of(context).logOut,
                             style: const TextStyle(
                               fontSize: 14,
                               color: AppColors.rdBlack,
@@ -205,7 +205,7 @@ class ProfilePage extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        final languages = LocaleItemEntity.localeItems();
+        final languages = LocaleItemEntity.localeItems(context);
         return BlocBuilder<GlobalLocalizationCubit,
             GlobalLocalizationCommonState>(
           builder: (context, state) {
@@ -230,7 +230,7 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            S.current.appLanguage,
+                            S.of(context).appLanguage,
                             textAlign: TextAlign.start,
                             style: const TextStyle(
                                 fontSize: 16,
@@ -324,21 +324,21 @@ class LocaleItemEntity {
   final String locale;
 
   /// Метод для получения списка локалей
-  static List<LocaleItemEntity> localeItems() =>
+  static List<LocaleItemEntity> localeItems(BuildContext  context) =>
       [
         LocaleItemEntity(
-          title: S.current.russianLanguage,
-          subtitle: S.current.russia,
+          title: S.of(context).russianLanguage,
+          subtitle: S.of(context).russia,
           locale: AppLocale.ruKey,
         ),
         LocaleItemEntity(
-          title: S.current.english,
-          subtitle: S.current.usa,
+          title: S.of(context).english,
+          subtitle: S.of(context).usa,
           locale: AppLocale.enKey,
         ),
         LocaleItemEntity(
-          title: S.current.kazakhLanguage,
-          subtitle: S.current.kazakhstan,
+          title: S.of(context).kazakhLanguage,
+          subtitle: S.of(context).kazakhstan,
           locale: AppLocale.kzKey,
         ),
       ];

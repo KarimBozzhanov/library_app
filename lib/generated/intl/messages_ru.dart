@@ -23,12 +23,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Профиль"),
+        "addComment":
+            MessageLookupByLibrary.simpleMessage("Добавить комментарий"),
+        "addPost": MessageLookupByLibrary.simpleMessage("Создать пост"),
         "appLanguage": MessageLookupByLibrary.simpleMessage("Язык приложения"),
         "author": MessageLookupByLibrary.simpleMessage("Автор: "),
-        "book": MessageLookupByLibrary.simpleMessage("Забронировать"),
+        "book": MessageLookupByLibrary.simpleMessage("Опубликовать"),
         "bookAddedToFavorites":
-            MessageLookupByLibrary.simpleMessage("Книга добавлена в избранное"),
-        "booked": MessageLookupByLibrary.simpleMessage("Забронирована"),
+            MessageLookupByLibrary.simpleMessage("Пост добавлен в избранное"),
+        "booked": MessageLookupByLibrary.simpleMessage("Черновик"),
         "category": MessageLookupByLibrary.simpleMessage("Категория: "),
         "description": MessageLookupByLibrary.simpleMessage("Описание:"),
         "doNotHaveAccount":
@@ -39,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emptyList": MessageLookupByLibrary.simpleMessage("Список пуст"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "englishLanguage": MessageLookupByLibrary.simpleMessage("Английский"),
+        "failedToAddPost":
+            MessageLookupByLibrary.simpleMessage("Не удалось создать пост"),
         "failedToRetrieveData":
             MessageLookupByLibrary.simpleMessage("Не удалось получить данные"),
         "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
@@ -47,29 +52,34 @@ class MessageLookup extends MessageLookupByLibrary {
             "Пожалуйста, заполните свои данные, чтобы зарегистрироваться"),
         "group": MessageLookupByLibrary.simpleMessage("Группа"),
         "happyReading":
-            MessageLookupByLibrary.simpleMessage("Приятного чтения!"),
+            MessageLookupByLibrary.simpleMessage("Приятного общения!"),
         "home": MessageLookupByLibrary.simpleMessage("Главная"),
-        "inLibrary": MessageLookupByLibrary.simpleMessage("В библиотеке"),
+        "inLibrary": MessageLookupByLibrary.simpleMessage("Опубликован"),
         "kazakhLanguage": MessageLookupByLibrary.simpleMessage("Қазақша"),
         "kazakhstan": MessageLookupByLibrary.simpleMessage("Казахстан"),
-        "latestBooks": MessageLookupByLibrary.simpleMessage("Последние книги"),
+        "latestBooks": MessageLookupByLibrary.simpleMessage("Последние посты"),
         "launchDescription": MessageLookupByLibrary.simpleMessage(
-            "Откройте и расслабьтесь с нашим приложением онлайн-библиотеки. Читайте откуда угодно и находите книги, которые вам нравятся. Приятного чтения!"),
+            "Откройте и наслаждайтесь нашим блог-приложением. Пишите свои мысли, делитесь идеями и находите вдохновение! Приятного общения!"),
         "logIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "logOut": MessageLookupByLibrary.simpleMessage("Выйти"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефона"),
+        "postAdded": MessageLookupByLibrary.simpleMessage("Пост создан"),
+        "postDescription": MessageLookupByLibrary.simpleMessage("Описание"),
+        "postTag": MessageLookupByLibrary.simpleMessage("Тэг"),
+        "postTitle": MessageLookupByLibrary.simpleMessage("Заголовок"),
         "repPassword": MessageLookupByLibrary.simpleMessage("Повторите пароль"),
         "russia": MessageLookupByLibrary.simpleMessage("Россия"),
         "russianLanguage": MessageLookupByLibrary.simpleMessage("Русский"),
         "saved": MessageLookupByLibrary.simpleMessage("Избранное"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "seeMore": MessageLookupByLibrary.simpleMessage("узнать больше"),
+        "signUpHere": MessageLookupByLibrary.simpleMessage("Регистрация"),
         "status": MessageLookupByLibrary.simpleMessage("Статус: "),
-        "topBooks": MessageLookupByLibrary.simpleMessage("Лучшие книги"),
+        "topBooks": MessageLookupByLibrary.simpleMessage("Популярные посты"),
         "type": MessageLookupByLibrary.simpleMessage("Тип: "),
         "upcomingBooks":
-            MessageLookupByLibrary.simpleMessage("Предстоящие книги"),
+            MessageLookupByLibrary.simpleMessage("Посты в разработке"),
         "usa": MessageLookupByLibrary.simpleMessage("США"),
         "username": MessageLookupByLibrary.simpleMessage("Имя пользователя")
       };

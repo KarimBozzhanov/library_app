@@ -23,54 +23,64 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Профиль"),
-        "appLanguage": MessageLookupByLibrary.simpleMessage("Қолдану тілі"),
+        "addComment": MessageLookupByLibrary.simpleMessage("Пікір қосу"),
+        "addPost": MessageLookupByLibrary.simpleMessage("Жазба жасау"),
+        "appLanguage": MessageLookupByLibrary.simpleMessage("Қосымша тілі"),
         "author": MessageLookupByLibrary.simpleMessage("Автор: "),
-        "book": MessageLookupByLibrary.simpleMessage("Брондау"),
+        "book": MessageLookupByLibrary.simpleMessage("Жариялау"),
         "bookAddedToFavorites":
-            MessageLookupByLibrary.simpleMessage("Кітап таңдаулыларға қосылды"),
-        "booked": MessageLookupByLibrary.simpleMessage("Брондалған"),
+            MessageLookupByLibrary.simpleMessage("Жазба таңдаулыға қосылды"),
+        "booked": MessageLookupByLibrary.simpleMessage("Қаралуда"),
         "category": MessageLookupByLibrary.simpleMessage("Санат: "),
         "description": MessageLookupByLibrary.simpleMessage("Сипаттама:"),
         "doNotHaveAccount":
-            MessageLookupByLibrary.simpleMessage("Әлі тіркелмеген?"),
+            MessageLookupByLibrary.simpleMessage("Әлі тіркелмегенсіз бе?"),
         "download": MessageLookupByLibrary.simpleMessage("Жүктеу"),
         "edit": MessageLookupByLibrary.simpleMessage("Өзгерту"),
         "email": MessageLookupByLibrary.simpleMessage("Электрондық пошта"),
         "emptyList": MessageLookupByLibrary.simpleMessage("Тізім бос"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
-        "englishLanguage": MessageLookupByLibrary.simpleMessage("Ағылшын"),
+        "englishLanguage": MessageLookupByLibrary.simpleMessage("Ағылшынша"),
+        "failedToAddPost": MessageLookupByLibrary.simpleMessage(
+            "Жазбаны жасау мүмкін болмады"),
         "failedToRetrieveData": MessageLookupByLibrary.simpleMessage(
             "Деректерді алу мүмкін болмады"),
         "fillYourDetailsToLogin": MessageLookupByLibrary.simpleMessage(
-            "Жүйеге кіру үшін мәліметтеріңізді толтырыңыз"),
+            "Кіру үшін мәліметтеріңізді толтырыңыз"),
         "fillYourDetailsToSignUp": MessageLookupByLibrary.simpleMessage(
             "Тіркелу үшін мәліметтеріңізді толтырыңыз"),
         "group": MessageLookupByLibrary.simpleMessage("Топ"),
-        "happyReading": MessageLookupByLibrary.simpleMessage("Жақсы оқу!"),
-        "home": MessageLookupByLibrary.simpleMessage("Негізгі"),
-        "inLibrary": MessageLookupByLibrary.simpleMessage("Кітапханада"),
+        "happyReading": MessageLookupByLibrary.simpleMessage(
+            "Жақсы қарым-қатынас тілейміз!"),
+        "home": MessageLookupByLibrary.simpleMessage("Басты бет"),
+        "inLibrary": MessageLookupByLibrary.simpleMessage("Жарияланған"),
         "kazakhLanguage": MessageLookupByLibrary.simpleMessage("Қазақша"),
         "kazakhstan": MessageLookupByLibrary.simpleMessage("Қазақстан"),
-        "latestBooks": MessageLookupByLibrary.simpleMessage("Соңғы кітаптар"),
+        "latestBooks": MessageLookupByLibrary.simpleMessage("Соңғы жазбалар"),
         "launchDescription": MessageLookupByLibrary.simpleMessage(
-            "Біздің онлайн кітапхана қолданбасымен ашып, демалыңыз. Қай жерде болсаңыз да оқып, ұнайтын кітаптарды табыңыз. Қызықты оқулар!"),
-        "logIn": MessageLookupByLibrary.simpleMessage("Кіру үшін"),
+            "Біздің блог қосымшамызды ашып, ләззат алыңыз. Өз ойларыңызбен бөлісіңіз, идеяларыңызды жариялаңыз және шабыт табыңыз! Жақсы қарым-қатынас тілейміз!"),
+        "logIn": MessageLookupByLibrary.simpleMessage("Кіру"),
         "logOut": MessageLookupByLibrary.simpleMessage("Шығу"),
-        "password": MessageLookupByLibrary.simpleMessage("Құпия сөз"),
+        "password": MessageLookupByLibrary.simpleMessage("Құпиясөз"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Телефон нөмірі"),
+        "postAdded": MessageLookupByLibrary.simpleMessage("Жазба жасалды"),
+        "postDescription": MessageLookupByLibrary.simpleMessage("Сипаттама"),
+        "postTag": MessageLookupByLibrary.simpleMessage("Тег"),
+        "postTitle": MessageLookupByLibrary.simpleMessage("Тақырып"),
         "repPassword":
-            MessageLookupByLibrary.simpleMessage("Құпия сөзді қайталаңыз"),
+            MessageLookupByLibrary.simpleMessage("Құпиясөзді қайталаңыз"),
         "russia": MessageLookupByLibrary.simpleMessage("Ресей"),
-        "russianLanguage": MessageLookupByLibrary.simpleMessage("Орыс"),
-        "saved": MessageLookupByLibrary.simpleMessage("Таңдаулылар"),
+        "russianLanguage": MessageLookupByLibrary.simpleMessage("Орысша"),
+        "saved": MessageLookupByLibrary.simpleMessage("Таңдаулы"),
         "search": MessageLookupByLibrary.simpleMessage("Іздеу"),
-        "seeMore": MessageLookupByLibrary.simpleMessage("көбірек біліңіз"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("толығырақ"),
+        "signUpHere": MessageLookupByLibrary.simpleMessage("Тіркелу"),
         "status": MessageLookupByLibrary.simpleMessage("Мәртебесі: "),
-        "topBooks": MessageLookupByLibrary.simpleMessage("Үздік кітаптар"),
+        "topBooks": MessageLookupByLibrary.simpleMessage("Танымал жазбалар"),
         "type": MessageLookupByLibrary.simpleMessage("Түрі: "),
         "upcomingBooks":
-            MessageLookupByLibrary.simpleMessage("Алдағы кітаптар"),
+            MessageLookupByLibrary.simpleMessage("Жазылып жатқан жазбалар"),
         "usa": MessageLookupByLibrary.simpleMessage("АҚШ"),
-        "username": MessageLookupByLibrary.simpleMessage("Қолданушының аты")
+        "username": MessageLookupByLibrary.simpleMessage("Қолданушы аты")
       };
 }

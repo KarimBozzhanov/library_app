@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/config/theme.dart';
+import 'package:library_app/feature/create_post/presentation/ui/create_post_screen.dart';
 import 'package:library_app/feature/home/presentation/ui/home_page.dart';
 import 'package:library_app/feature/profile/presentation/ui/profile_page.dart';
-import 'package:library_app/feature/saved/presentation/ui/saved_page.dart';
 import 'package:library_app/feature/search/presentation/ui/search_page.dart';
 import 'package:library_app/generated/l10n.dart';
 
@@ -19,7 +19,6 @@ class _MainPageState extends State<MainPage> {
   final _screens = const [
     HomeBuilder(),
     SearchBuilder(),
-    SavedBuilder(),
     ProfileBuilder(),
   ];
 
@@ -36,6 +35,16 @@ class _MainPageState extends State<MainPage> {
         body: IndexedStack(
           index: _selectedIndex,
           children: _screens,
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CreatePostBuilder())),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50)
+          ),
+          child: const Icon(
+            Icons.add,
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           onTap: onItemTap,
@@ -54,6 +63,7 @@ class _MainPageState extends State<MainPage> {
             fontWeight: FontWeight.w500,
             fontSize: 14,
           ),
+
           items: [
             BottomNavigationBarItem(
               icon: Container(
@@ -74,7 +84,7 @@ class _MainPageState extends State<MainPage> {
                 child: const Icon(Icons.home),
               ),
               backgroundColor: AppColors.rdBlack,
-              label: S.current.home,
+              label: S.of(context).home,
             ),
             BottomNavigationBarItem(
               icon: Container(
@@ -95,27 +105,7 @@ class _MainPageState extends State<MainPage> {
                 child: const Icon(Icons.search),
               ),
               backgroundColor: AppColors.rdBlack,
-              label: S.current.search,
-            ),
-            BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 23),
-                margin: const EdgeInsets.only(bottom: 4, top: 12),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: const Icon(Icons.favorite_border),
-              ),
-              activeIcon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 23),
-                margin: const EdgeInsets.only(bottom: 4, top: 12),
-                decoration: BoxDecoration(
-                  color: AppColors.rdBlack,
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: const Icon(Icons.favorite),
-              ),
-              label: S.current.saved,
+              label: S.of(context).search,
             ),
             BottomNavigationBarItem(
               icon: Container(
@@ -135,7 +125,7 @@ class _MainPageState extends State<MainPage> {
                 ),
                 child: const Icon(Icons.person),
               ),
-              label: S.current.account,
+              label: S.of(context).account,
             ),
           ],
         ),

@@ -65,7 +65,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               forceMaterialTransparency: true,
               centerTitle: true,
               title: Text(
-                S.current.register,
+                S.of(context).signUpHere,
                 style: const TextStyle(
                   color: AppColors.rdBlack,
                   fontSize: 24,
@@ -82,7 +82,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        S.current.fillYourDetailsToLogin,
+                        S.of(context).fillYourDetailsToLogin,
                         style: const TextStyle(
                           fontSize: 16,
                           color: AppColors.black,
@@ -92,31 +92,31 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                   AppCommonTextField(
                     textEditingController: _nameController,
-                    label: S.current.username,
+                    label: S.of(context).username,
                     margin: const EdgeInsets.only(bottom: 24),
                   ),
                   AppCommonTextField(
                     textEditingController: _emailController,
-                    label: S.current.email,
+                    label: S.of(context).email,
                     margin: const EdgeInsets.only(bottom: 24),
                   ),
                   AppCommonTextField(
                     textEditingController: _passwordController,
-                    label: S.current.password,
+                    label: S.of(context).password,
                     isPassword: true,
                     margin: const EdgeInsets.only(bottom: 24),
                   ),
                   AppCommonTextField(
                     textEditingController: _repeatPassController,
                     isPassword: true,
-                    label: S.current.repPassword,
+                    label: S.of(context).repPassword,
                     margin: const EdgeInsets.only(bottom: 32),
                   ),
                   AppRoundedContainer(
                     onTap: () => _cubit.registration(),
                     backgroundColor: AppColors.rdBlack,
                     child: Text(
-                      S.current.register,
+                      S.of(context).signUpHere,
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 14,

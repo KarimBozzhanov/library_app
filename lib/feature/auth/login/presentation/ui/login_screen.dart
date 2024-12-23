@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
               centerTitle: true,
               forceMaterialTransparency: true,
               title: Text(
-                S.current.logIn,
+                S.of(context).logIn,
                 style: const TextStyle(
                   color: AppColors.rdBlack,
                   fontSize: 24,
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          S.current.fillYourDetailsToLogin,
+                          S.of(context).fillYourDetailsToLogin,
                           style: const TextStyle(
                             fontSize: 16,
                             color: AppColors.black,
@@ -88,12 +88,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     AppCommonTextField(
                       textEditingController: _emailController,
-                      label: S.current.email,
+                      label: S.of(context).email,
                       margin: const EdgeInsets.only(bottom: 24),
                     ),
                     AppCommonTextField(
                       textEditingController: _passwordController,
-                      label: S.current.password,
+                      label: S.of(context).password,
                       isPassword: true,
                       margin: const EdgeInsets.only(bottom: 32),
                     ),
@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () => _cubit.login(),
                       backgroundColor: AppColors.rdBlack,
                       child: Text(
-                        S.current.logIn,
+                        S.of(context).logIn,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            S.current.doNotHaveAccount,
+                            S.of(context).doNotHaveAccount,
                             style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             child: Text(
-                              S.current.register,
+                              S.of(context).signUpHere,
                               style: const TextStyle(
                                 color: AppColors.black,
                                 fontWeight: FontWeight.w600,

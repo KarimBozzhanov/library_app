@@ -11,6 +11,7 @@ class AppRoundedContainer extends StatelessWidget {
     this.margin,
     this.padding,
     this.borderColor,
+    this.height,
   });
 
   final void Function()? onTap;
@@ -21,6 +22,7 @@ class AppRoundedContainer extends StatelessWidget {
   final EdgeInsets? margin;
   final EdgeInsets? padding;
   final Color? borderColor;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class AppRoundedContainer extends StatelessWidget {
     return Container(
       alignment: alignment ?? Alignment.center,
       margin: margin,
+      height: height ?? 60,
       padding: padding ?? const EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius ?? 8),
